@@ -1,33 +1,325 @@
 <!DOCTYPE html>
+<html lang="it">
 <head>
-  <title>Lorenzo Valtriani</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@triani</title>
+  <!-- Link al CSS di Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    /* Stile personalizzato per posizionare "Triani" sotto "Lorenzo Valtriani" */
+    .navbar-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    .list-group-item {
+        border: none
+    }
+    
+    .list-group-item i {
+        margin-right: 10px;
+        color: black;
+        font-size: 20px;
+    }
+
+    .btn-group i {
+        margin-right: 10px;
+        color: black;
+    }
+
+    .btn-group img {
+        margin-right: 5px;
+    }
+
+    .card-text {
+        font-size: 13px;
+    }
+
+    .album .col {
+        margin-bottom: 5px;
+    }
+
+    body {
+        /* Impedisci al cursore predefinito del browser di essere visualizzato */
+        cursor: none;
+    }
+
+    .custom-cursor {
+        position: fixed;
+        width: 30px; /* Imposta la larghezza dell'immagine del cursore */
+        height: 30px; /* Imposta l'altezza dell'immagine del cursore */
+        background-image: url('./effetti/torchic.png'); /* Imposta l'immagine del cursore */
+        background-size: cover; /* Imposta la modalità di ridimensionamento dell'immagine */
+        pointer-events: none; /* Permetti ai clic di passare attraverso il cursore */
+        z-index: 9999; /* Assicura che il cursore sia sopra a tutto il resto */
+    }
+
+
+    /* Media query per schermi più piccoli, ad esempio telefoni */
+    @media (max-width: 768px) {
+      .row > * {
+        width: 45%;
+        padding-right: 1px;
+        font-size: 13px;
+      }
+
+      .list-group-item {
+        padding: 1px;
+      }
+
+    }
+    
+
+  </style>
 </head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <div style="margin-right: 20px;">
-        <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">
-        <a class="navbar-brand" href="#">Lorenzo Valtriani</a>
-      </div>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Blogghettino</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Cerca contenuto" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Cerca</button>
-        </form>
-      </div>
-    </div>
-  </nav>
+<body style="background-color: whitesmoke !important">
+    <div class="custom-cursor"></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #FFE978 !important;">
+    <div class="container">
+        <!-- Logo e nome -->
+        <!-- img src="logo.png" alt="" width="30" height="30" class="d-inline-block align-top" style="margin-right: 10px;" -->
+        <a class="navbar-brand">
+        <span>@triani</span> 
+        <span class="text-muted" style="font-size: 0.8rem;">Lorenzo Valtriani</span>
+        </a>
 
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Blogghettino</a>
+            </li>
+        </ul>
+        </div>
+    </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+        <!-- Foto profilo -->
+        <div class="col-md-4">
+            <div class="profile-info">
+            <img src="img/foto.png" alt="Profilo" class="img-fluid" height="425px">
+            </div>
+        </div>
+        <!-- Informazioni -->
+        <div class="col-sm-4">
+            <ul class="list-group" >
+            <li class="list-group-item"><strong>Name:</strong> Lorenzo Valtriani</li>
+            <li class="list-group-item"><strong>Age:</strong> 22</li>
+            <li class="list-group-item"><strong>Diploma:</strong> Istituto Tecnico - Informatica [2020] </li>
+            <li class="list-group-item"><strong>University:</strong> Ingegneria Informatica, UniPi </li>
+            <li class="list-group-item"><strong>Work:</strong> Freelance </li>
+            <li class="list-group-item"><strong>Working environment:</strong> Attualmente soprattutto siti web statici e dinamici </li>
+            <li class="list-group-item">
+                <a target="_blank" href="https://github.com/trianitriani"><i class="bi bi-github"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/lorenzovaltriani/"><i class="bi bi-linkedin"></i></a>
+                <a target="_blank" href="https://www.instagram.com/trianitrianitrianitriani"><i class="bi bi-instagram"></i></a>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+
+    <!-- inizio progetti -->
+    <div class="album py-5">
+        <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- primo progetto della tripletta -->
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="img/iss-zone-web-page.png"/>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Designed and developed the showcase website for the company ISS, ISP of Versilia (LU).
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                            </div>
+                            <div class="btn-group">
+                                <img src="loghi/bootstrap.png" height="20px">
+                                <img src="loghi/html.png" height="20px">
+                                <img src="loghi/js.png" height="20px">
+                                <img src="loghi/css.png" height="20px">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <i class="bi bi-github"></i>
+                                <a href="https://iss.zone" target="_blank"><i class="bi bi-browser-chrome"></i></a>
+                            </div>
+                            <small class="text-muted">2023</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- secondo progetto della tripletta -->
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="img/escape-room.png"/>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Client-server model network application that implements the escape room game via terminal, the application includes the game engine and a test room, the user can download the application and add other rooms of his own free will.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                            </div>
+                            <div class="btn-group">
+                                <img src="loghi/c.png" height="20px">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a target="_blank" href="https://github.com/trianitriani/escape-room"><i class="bi bi-github"></i></a>
+                            </div>
+                            <small class="text-muted">2024</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- terzo progetto della tripletta -->
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="img/anime-list.png"/>
+                    <div class="card-body">
+                        <p class="card-text">
+                            This application was created with the aim of providing users with the possibility of having a private list of anime, designed to contain those that the user wants to see in the future, so as to write them down and not forget them.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                            </div>
+                            <div class="btn-group">
+                                <img src="loghi/java.png" height="20px">
+                                <img src="loghi/spring.png" height="20px">
+                                <img src="loghi/sql.png" height="20px">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="https://github.com/trianitriani/anime_list" target="_blank"><i class="bi bi-github"></i></a>
+                            </div>
+                            <small class="text-muted">2023</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- primo progetto della tripletta -->
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="img/iss-zone-area-riservata.png"/>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Designed and developed a reserved area for the company ISS, ISP of Versilia (LU), in which customers and administrators can see their information, download invoices to pay ...
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                            </div>
+                            <div class="btn-group">
+                                <img src="loghi/bootstrap.png" height="20px">
+                                <img src="loghi/html.png" height="20px">
+                                <img src="loghi/js.png" height="20px">
+                                <img src="loghi/css.png" height="20px">
+                                <img src="loghi/php.png" height="20px">
+                                <img src="loghi/sql.png" height="20px">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <i class="bi bi-github"></i>
+                                <a href="https://portale.iss.zone/login.html" target="_blank"><i class="bi bi-browser-chrome"></i></a>
+                            </div>
+                            <small class="text-muted">2023</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- secondo progetto della tripletta -->
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="img/casa-domotica.png"/>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Design and creation of a database that represents a smart home, also includes analytics used to suggest the color combinations of the lights most used by the family.                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                            </div>
+                            <div class="btn-group">
+                                <img src="loghi/sql.png" height="20px">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a target="_blank" href="https://github.com/trianitriani/smart-home"><i class="bi bi-github"></i></a>
+                            </div>
+                            <small class="text-muted">2021</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- terzo progetto della tripletta -->
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="img/hgguran-bot.png"/>
+                    <div class="card-body">
+                        <p class="card-text">
+                            The code is used to operate a telegram bot in order to assist the players of the telegram role-playing game "Guran Turino's Hunger Games" in their adventure and to help the master.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                            </div>
+                            <div class="btn-group">
+                                <img src="loghi/python.png" height="20px">
+                                <img src="loghi/pyrogram.png" height="20px">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="https://github.com/trianitriani/hgGuranBot" target="_blank"><i class="bi bi-github"></i></a>
+                            </div>
+                            <small class="text-muted">2021</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- seconda tripletta -->
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            
+        </div>
+    </div>
+
+    <!-- Link al JavaScript di Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("mousemove", function(event) {
+            var x = event.clientX;     // Posizione orizzontale del cursore
+            var y = event.clientY;     // Posizione verticale del cursore
+
+            var cursor = document.querySelector('.custom-cursor');
+            cursor.style.left = x + 'px';   // Imposta la posizione orizzontale del cursore
+            cursor.style.top = y + 'px';    // Imposta la posizione verticale del cursore
+        });
+    </script>
+    
 
 </body>
+
 </html>
