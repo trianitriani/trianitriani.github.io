@@ -1,0 +1,112 @@
+Set Up Apache Virtual Host on Ubuntu
+====================================
+
+Introduction
+------------
+
+The *Apache HTTP server* is the most popular open-source web server. With this technology you can create some website called **virtual hosts**.
+Using *virtual hosts*, one Apache istance can serve multiple website. Each individual site is configured using Apache will direct the user to a specific
+directory that contain that site's information.
+
+In this tutorial, you will set up Apache virtual hosts on an Ubuntu 20.04 server.
+
+Install the Apache Web Server
+-----------------------------
+
+Let's begin by updating the local package index and install apache2:
+
+.. code-block:: console
+
+  $ sudo apt update
+  $ sudo apt install apache2
+
+To test that Apache2 is working correctly, enter it into your browser's address bar:
+
+.. code-block:: console
+
+  http://your_ip_address
+
+You should see the default page of Ubuntu 20.04 Apache2, this page indicates that Apache is working correctly. 
+
+.. image:: img/apache_default_page.png
+   :alt: Apache2 Ubuntu Default Page
+   :height: 400px
+   :align: center
+
+Creating the directory of your web site
+---------------------------------------
+
+The first step is create a directory that will hold the site data.
+Your *document root*, the top-level directory that Apache looks, will be set to individual directories under */var/www/* directory.
+You will create a directory here for each of the virtual hosts.
+
+.. code-block:: console
+
+   $ sudo mkdir /var/www/your_domain  
+   $ sudo chown -R $USER:$USER /var/www/your_domain 
+   $ sudo chmod -R 755 /var/www 
+
+Create into */var/www/your_domain* an index.html file.
+
+Creating new virtual hosts file 
+-------------------------------
+
+Virtual host file are the files that specify the configuration of your virtual hosts and dictates how the Apache 
+web server will respond to various domain requests.
+
+Copy the default configuration file over to the first domain:
+
+.. code-block:: console
+
+   $ sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/your_domain.conf
+
+Open the new file:
+
+.. code-block:: console
+
+   $ sudo nano /etc/apache2/sites-available/your_domain.conf
+
+Modify the default file in this method:
+
+.. code-block:: console
+  
+  <VirtualHost *:80>
+    ...
+    ServerAdmin admin@your_domain
+    ServerName your_domain
+    ServerAlias www.your_domain
+    DocumentRoot /var/www/your_domain
+    ...
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+    ...
+   </VirtualHost>
+
+Save and close the file.
+Now that you have created your host file, you must enable it.
+
+.. code-block:: console
+
+   $ sudo a2ensite your_domain.conf 
+   $ sudo a2dissite 000-default.conf 
+
+Next, test for the configuration errors:
+
+.. code-block:: console
+
+   $ sudo apache2ctl configtest
+
+You should receive the following output:
+
+.. code-block:: console
+
+   Output
+   . . .
+   Syntax OK
+
+You are finish, but first reload Apache2
+
+.. code-block:: console 
+
+   $ sudo systemctl restart apache2
+
